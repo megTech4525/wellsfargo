@@ -53,12 +53,41 @@
     color: black;
 }
 .light-mode .container, 
-/* .light-mode .header, */
-.light-mode .sidecontainer{
+.light-mode .sidecontainer,
+.light-mode .sidebar a i{
     background-color: #fff;
     color: black
 
+
 }
+
+
+.light-mode .container{
+    background-color: rgb(228, 230, 235);
+    
+    color: black
+}
+
+
+.light-mode .sidecontainer a i{
+    background-color: #fff;
+    color: black
+}
+
+
+
+
+.light-mode .sidecontainer a {
+    
+    color: black
+}
+
+.light-mode .account-description{
+    background-color: #fff;
+    color: black;
+    width: 900px;
+}
+
 
  
 .toggle{
@@ -96,13 +125,119 @@ border-radius: 10px;
     color: white;
             
 }
-.dark-mode .header, 
-.dark-mode .sidecontainer {
+/* CORRECTIONS */
+/* 
+.light-mode .account-description{
+    background-color: #fff;
+    color: black;
+    width: 700px;
+
+} */
+
+
+.dark-mode .dashboard,
+.dark-mode .account-description
+{
 background-color: #1e1e1e;
-color: blue;
+color: white;
+            
+}
+
+ .dark-mode .cardName{
+    background-color: #1e1e1e;
+    color: white;
+                
+     }
+ .dark-mode .CardPagecontainer{
+    background-color: #1e1e1e;
+    color: white;
+                
+     }
+ .dark-mode .form-body{
+background-color: #1e1e1e;
+color: white;
+            
+ }
+ 
+.dark-mode .transaction-dashboard
+
+{
+background-color: #1e1e1e;
+color: white;
+            
+ }
+ .dark-mode .balance
+
+ {
+ background-color: #1e1e1e;
+ color: white;
+             
+  }
+  .dark-mode .table-responsive
+
+  {
+  background-color: #1e1e1e;
+  color: white;
+              
+   }
+
+   .dark-mode .addMoneycontainer
+   {
+   background-color: #1e1e1e;
+   color: white;
+               
+    }
+ 
+
+
+    .dark-mode header
+   {
+   background-color: #1e1e1e;
+   color: white;
+               
+    }
+
+    .dark-mode header a i
+   {
+   color: white;
+               
+    }
+ 
+ 
+ 
+ .dark-mode .account-balance,
+ .dark-mode .current-balance,
+ .dark-mode .completed-transaction,
+ .dark-mode .pending-transaction,
+ .dark-mode .failed-transaction
+ {
+ background-color: #1e1e1e;
+ color: white;
+             
+  }
+ 
+
+
+ .dark-mode .transaction-history a{
+    color: white;
+
+ }
+.dark-mode .header,
+.dark-mode .sidecontainer
+{
+background-color: #1e1e1e;
+color:blue;
             
  }
 
+ .dark-mode .sidecontainer a i,
+ .dark-mode .sidebar a i  {
+color: white;
+ }
+
+ .dark-mode .sidecontainer a {
+    color: white;
+     }
 
 .security{
     margin-top: 15px;

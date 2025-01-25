@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar dashboard";
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: #1976D2; /* Modified blue */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.menu a {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.menu a:hover {
+    background-color: #1976D2;
+    color: #fff;
+}
+
+/* Dashboard */
+.dashboard {
+    grid-area: dashboard;
+    padding: 20px;
+}
+
+.account-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.detail-item {
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.detail-item:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.detail-item h3 {
+    font-size: 1.2rem;
+    color: #1976D2;
+}
+
+.detail-item p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Transaction Dashboard</h1>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <label for="upload">
+                    <img src="./IMG/user-PROFILE.png" alt="Profile" id="Profile-image">
+                    <input type="file" accept="image/*" id="upload">
+                </label>
+                <h3>Name</h3>
+            </div>
+            <nav class="menu">
+                <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                <a href="./HTML/userProfile.html"><i class="fa fa-user-circle"></i> User Profile</a>
+                <a href="#"><i class="fa fa-bell"></i> Notifications</a>
+                <a href="#"><i class="fa fa-phone"></i> Customer Care</a>
+                <a href="./HTML/Transaction.html"><i class="fa fa-download"></i> Transactions</a>
+                <a href="./HTML/settings.html"><i class="fa fa-sliders"></i> Settings</a>
+                <a href="#"><i class="fa fa-refresh"></i> Refresh</a>
+            </nav>
+        </aside>
+
+        <!-- Dashboard -->
+        <main class="dashboard">
+            <section class="account-details">
+                <div class="detail-item">
+                    <h3>Available Balance</h3>
+                    <p>&dollar;5,000.00</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Current Balance</h3>
+                    <p>&dollar;4,800.00</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Completed Transactions</h3>
+                    <p>15</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Pending Transactions</h3>
+                    <p>3</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Failed Transactions</h3>
+                    <p>2</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./JS/index.js"></script>
+</body>
+
+</html>

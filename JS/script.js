@@ -12,6 +12,8 @@ localTransferBtn.addEventListener('click', () => {
     foreignTransferForm.classList.remove('active');
     localTransferBtn.classList.add('active');
     foreignTransferBtn.classList.remove('active');
+    wireTransferForm.classList.remove('active');
+
 });
 
 foreignTransferBtn.addEventListener('click', () => {
@@ -20,13 +22,13 @@ foreignTransferBtn.addEventListener('click', () => {
     localTransferForm.classList.remove('active');
     foreignTransferBtn.classList.add('active');
     localTransferBtn.classList.remove('active');
+    wireTransferForm.classList.remove('active');
 });
 
 wireTransferBtn.addEventListener('click', () => {
     // Show foreign form and hide local form
     wireTransferForm.classList.add('active');
     foreignTransferForm.classList.remove('active');
-    
     localTransferForm.classList.remove('active');
     // foreignTransferBtn.classList.add('active');
     // localTransferBtn.classList.remove('active');
@@ -162,6 +164,29 @@ wireTransferForm.addEventListener('submit', (e) => {
 });
 
 
+const body = document.body;
+
+        // Check for saved theme in local storage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.className = savedTheme;
+            toggleButton.innerHTML = savedTheme === 'dark-mode'
+                ? '<i class="fa fa-toggle-on" aria-hidden="true"></i>'
+                : '<i class="fa fa-toggle-off" aria-hidden="true"></i>';
+        }
+
+        // Toggle between dark and light modes
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.replace('light-mode', 'dark-mode');
+                toggleButton.innerHTML = '<i class="fa fa-toggle-on" aria-hidden="true"></i>';
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                body.classList.replace('dark-mode', 'light-mode');
+                toggleButton.innerHTML = '<i class="fa fa-toggle-off" aria-hidden="true"></i>';
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
 
 
 
@@ -191,122 +216,4 @@ intlTelInput(phoneInput, {
             .catch(() => callback("us"));
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Get form and button elements
-// const localTransferBtn = document.getElementById('localTransferBtn');
-// const foreignTransferBtn = document.getElementById('foreignTransferBtn');
-
-
-// // Add event listeners for buttons
-// localTransferBtn.addEventListener('click', () => {
-//     // Show local form and hide foreign form
-//     localTransferForm.classList.add('active');
-//     foreignTransferForm.classList.remove('active');
-//     localTransferBtn.classList.add('active');
-//     foreignTransferBtn.classList.remove('active');
-// });
-
-// foreignTransferBtn.addEventListener('click', () => {
-//     // Show foreign form and hide local form
-//     foreignTransferForm.classList.add('active');
-//     localTransferForm.classList.remove('active');
-//     foreignTransferBtn.classList.add('active');
-//     localTransferBtn.classList.remove('active');
-// });
-
-
-
-// const amountToWithdraw = document.getElementById('localAmount').value;
-// const localTransferForm = document.getElementById('localTransferForm');
-// const foreignTransferForm = document.getElementById('foreignTransferForm');
-// const withdrawableAmount = localStorage.getItem('initialAmount')
-
-
-
-    
-// localTransferForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-// // Create the transaction object
-// const transaction = {
-//     type: 'Local Transfer',
-//     recipient: document.getElementById('localAccountNumber').value,
-//     amount: document.getElementById('localAmount').value.toLocaleString(),
-//     date: new Date().toISOString()
-// };
-
-// // Retrieve existing transactions from localStorage or initialize a new array
-// let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
-// transactions.push(transaction);
-
-// // Save updated transactions back to localStorage
-// localStorage.setItem('transactions', JSON.stringify(transactions));
-
-//          window.location.href = '../HTML/Transaction.html'
-        
-//          localAmountToLocalString()
-// }) 
-
-
-
-// // const foreignTransferForm = document.getElementById('foreignTransferForm');
-
-// foreignTransferForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-
-//     // Collect form data
-//     const transaction = {
-//         type: 'Foreign Transfer',
-//         recipientIBAN: document.getElementById('foreignAccountNumber').value,
-//         bankName: document.getElementById('foreignBankName').value,
-//         amount: document.getElementById('foreignAmount').value.toLocaleString(),
-//         date: new Date().toISOString(),
-//         purpose: document.getElementById('localAmount').value, // Ensure the correct ID
-//         description: document.getElementById('localAmount').value, // Ensure the correct ID
-//     };
-
-//     // Retrieve existing transactions from localStorage or initialize a new array
-//     let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
-//     transactions.push(transaction);
-
-//     // Save updated transactions back to localStorage
-//     localStorage.setItem('transactions', JSON.stringify(transactions));
-
-//     // Show success message
-//     alert('Transaction of ' + "$"+ transaction.amount + ' was successfully completed!');
-
-//     // Optionally redirect to transaction history page
-//     window.location.href = '../HTML/Transaction.html';
-// });
-
-
-// function localAmountToLocalString() {
-//     const amountToWithdraw = localStorage.setItem('amountToWithdraw', withdrawnBalance)
-// }
 

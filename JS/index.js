@@ -44,5 +44,30 @@ function loadBalanceFromLocalStorage() {
     ledgerBalanceDisplay.innerHTML = "&dollar;" + savedBalance.toLocaleString();
 }
 
+const body = document.body;
+
+        // Check for saved theme in local storage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.className = savedTheme;
+            toggleButton.innerHTML = savedTheme === 'dark-mode'
+                ? '<i class="fa fa-toggle-on" aria-hidden="true"></i>'
+                : '<i class="fa fa-toggle-off" aria-hidden="true"></i>';
+        }
+
+        // Toggle between dark and light modes
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.replace('light-mode', 'dark-mode');
+                toggleButton.innerHTML = '<i class="fa fa-toggle-on" aria-hidden="true"></i>';
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                body.classList.replace('dark-mode', 'light-mode');
+                toggleButton.innerHTML = '<i class="fa fa-toggle-off" aria-hidden="true"></i>';
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+
+
 loadBalanceFromLocalStorage();
 

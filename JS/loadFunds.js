@@ -27,36 +27,3 @@ function saveDeposit(Amount) {
 console.log("Stored Deposits:", localStorage.getItem('DepositHistory'));
 
 
-
-
-
-
-// function depositedMoney(amount) {
-//     // Retrieve the existing deposit history or initialize it
-//     let depositInHistory = JSON.parse(localStorage.getItem('initialAmount')) || [];
-    
-//     // Add the new deposit entry
-//     depositInHistory.push({
-//         type: 'Deposit', // Consistent with transaction structure
-//         amount: parseFloat(amount) || 0, // Ensure the amount is a number
-//         date: new Date().toISOString() // Save the date in ISO format
-//     });
-
-//     // Save back to localStorage
-//     localStorage.setItem('DepositHistory', JSON.stringify(depositInHistory));
-// }
-
-
-// function depositedMoney(){
-// const depositInHistory = JSON.parse(localStorage.getItem('deposit'))
-//     depositInHistory.push({
-//         type: 'Deposit',
-//         Amount: Amount,
-//         Date: new Date().toISOString(),
-//     });
-//     localStorage.setItem('deposit', JSON.stringify(depositInHistory));
-// }
-
-  
-
-

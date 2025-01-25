@@ -3,6 +3,18 @@
   font-weight: 400;
   font-style: normal;
 } */
+
+.container img{
+   border-radius: 50%;
+   height: 120px;
+   width: 130px;
+   position: relative;
+   display: flex;
+   margin-right: auto;
+   margin-left: auto;
+   top: 20px;
+   padding: 10px
+}
 .transaction-dashboard{
     position: relative;
     top: 75px;

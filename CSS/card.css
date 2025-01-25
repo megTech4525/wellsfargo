@@ -4,6 +4,16 @@
     
 }
 
+.CardPagecontainer a{
+    line-height: 60px;
+     position: relative;
+     top: 30px;
+     font-size: 16px;
+     margin-left: 20px;
+     /* color: white; */
+     text-decoration: none;
+}
+
 
 .card-container{
     position: absolute;
