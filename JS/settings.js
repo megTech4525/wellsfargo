@@ -1,11 +1,15 @@
 const securityUpdateDescription = document.getElementById("securityUpdateDescription-logout")
-securityUpdateDescription.addEventListener('click', () => {
-    confirm('Are you sure you want to logout?')
-    if (confirm == 0) {
-        alert("ok")
-    }
-    window.location.href = '../HTML/Register.html'
-})
+const confirmBox = document.getElementById('custom-confirm');
+    const confirmMessage = document.getElementById('confirm-message');
+    const confirmYes = document.getElementById('confirm-yes');
+    const confirmNo = document.getElementById('confirm-no');
+    const logout = document.getElementById('securityUpdateDescription-logout')
+    const logBox = document.getElementById('confirm-box')
+
+
+// securityUpdateDescription.addEventListener('click', () => {
+//     logBox.classList.add('active')
+// })
 
 
 
@@ -40,13 +44,7 @@ securityUpdateDescription.addEventListener('click', () => {
 
 //confirm box
    
-    const confirmBox = document.getElementById('custom-confirm');
-    const confirmMessage = document.getElementById('confirm-message');
-    const confirmYes = document.getElementById('confirm-yes');
-    const confirmNo = document.getElementById('confirm-no');
-    const logout = document.getElementById('securityUpdateDescription-logout')
-
-
+    
 
 
 

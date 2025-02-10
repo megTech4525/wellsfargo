@@ -216,9 +216,9 @@ color: white;
              
   }
  
-
-
- .dark-mode .transaction-history a{
+  
+ .dark-mode .transaction-history a
+ {
     color: white;
 
  }
@@ -229,7 +229,25 @@ background-color: #1e1e1e;
 color:blue;
             
  }
+.dark-mode #transactionSlip{
+    color: black;
+}
 
+.dark-mode #confirmTransaction{
+    color: black;
+}
+
+.dark-mode #declineTransaction{
+    color: black;
+}
+
+.dark-mode #Loading{
+    color: black;
+}
+.dark-mode .user-description{
+    background-color: black;
+    color: white;
+}
  .dark-mode .sidecontainer a i,
  .dark-mode .sidebar a i  {
 color: white;
@@ -268,6 +286,9 @@ hr{
 /* Styles for the custom confirmation dialog */
 .hidden {
     display: none;
+    position: absolute;
+    bottom: 150px;
+    left: 160px;
 }
 
 #custom-confirm {

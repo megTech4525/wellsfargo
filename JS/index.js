@@ -2,7 +2,9 @@ const imageInput = document.getElementById("upload");
 const imageDisplay = document.getElementById("Profile-image");
 let loadedFunds = document.getElementById("available-balance")
 let currentFunds = document.getElementById("current-balance")
-const ledgerBalanceDisplay = document.getElementById('Total-balance')
+const ledgerBalanceDisplay = document.getElementById('Total-balance');
+const CompletedTransaction = document.getElementById('number-transaction-completed');
+const failedTransaction = document.getElementById("number-transaction-failed");
 
 // Function to handle image upload and store it in localStorage
 function handleImageUpload(event) {
@@ -39,10 +41,17 @@ window.addEventListener("DOMContentLoaded", loadImageFromLocalStorage);
 
 function loadBalanceFromLocalStorage() {
     const savedBalance = parseFloat(localStorage.getItem('initialAmount')) || 0;
+    const completedT = parseFloat(localStorage.getItem('CT')) || 0;
+    const failedT = parseFloat(localStorage.getItem('FT')) || 0;
+    // const Lmode = localStorage.getItem('theme');
+    // // const Dmode = localStorage.getItem('dark-mode')
+    failedTransaction.innerHTML = failedT;
+    CompletedTransaction.innerHTML = completedT;
     loadedFunds.innerHTML = "&dollar;" + savedBalance.toLocaleString();
     currentFunds.innerHTML = "&dollar;" + savedBalance.toLocaleString();
     ledgerBalanceDisplay.innerHTML = "&dollar;" + savedBalance.toLocaleString();
 }
+loadBalanceFromLocalStorage();
 
 const body = document.body;
 
@@ -69,5 +78,4 @@ const body = document.body;
         });
 
 
-loadBalanceFromLocalStorage();
 

@@ -5,19 +5,20 @@
 }
 
 .dashboard-user{
-    position: relative;
-    top: 100px;
-    margin-right: auto;
-    margin-left: 90px;
     display: flex;
-    justify-content: center;
+    
         
+ }
+
+ .sidebar-user a{
+   cursor: pointer;
  }
  .user-description{
    position: relative;
+   bottom: 530px;
+   left: 400px;
    margin-right: auto;
    margin-left: auto;
-    
     justify-content: center;
     border: 1px solid transparent;
     border-radius: 10px;
